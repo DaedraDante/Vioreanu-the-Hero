@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    background-color: rgb(123, 152, 179);
+}
+
+.section-title {
+    font-size: 4em;
+    text-align: center;
+    position: relative;
+    top: 0.4em;
+}
+.screen-main-menu {
+    background-color: rgb(85, 143, 177);
+    width: 95vw;
+    height: 95vh;
+    margin: 0 auto;
+    margin-top: 1.5em;
+    box-shadow: rgba(2, 2, 14, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px 15px;
+}
+.screen-fight {
+    background-color: rgb(194, 126, 71);
+    width: 95vw;
+    height: 95vh;
+    margin: 0 auto;
+    margin-top: 1.5em;
+    box-shadow: rgba(2, 2, 14, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px 15px;
+    justify-content: center;
+    display: none;
+}
+    .fight-text-box {
+        width: 16em;
+        height: 36em;
+        border: 5px solid black;
+        margin-top: 2em;
+        overflow: auto;
+    }
+    .monster-container {
+        width: 48em;
+        height: 36em;
+        border: 5px solid black;   
+        position: relative;
+        margin-top: 2em;
+
+    }
+    .current-monster-img {
+        display: flex;
+        width: 24em;
+        height: 22em;
+        margin: 0 auto;
+        justify-content: center;
+        margin-top: 3em;
+    }
+    .current-monster-name-text {
+        display: flex;
+        justify-content: center;
+    }
+    .current-monster-health-text {
+        display: flex;
+        justify-content: center;
+    }
+    .attack-btn {
+        width: 12em;
+        text-align: center;
+        margin-left: 22em;
+    }
+.screen-shop {
+    background-color: rgb(177, 196, 73);
+    width: 95vw;
+    height: 95vh;
+    margin: 0 auto;
+    margin-top: 1.5em;
+    box-shadow: rgba(2, 2, 14, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px 15px;
+    display: none;
+}
+.screen-final-boss {
+    background-color: rgb(170, 58, 54);
+    width: 95vw;
+    height: 95vh;
+    margin: 0 auto;
+    margin-top: 1.5em;
+    box-shadow: rgba(2, 2, 14, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px 15px;
+    display: none;
+}
+.button-container {
+    border: 3px solid black;
+    box-shadow: 5px 5px black;
+    width: 60em;
+    height: 10em;
+    position: fixed;
+    top: 50em;
+    left: 35em;
+    align-content: center;
+}
+.buttonGen {
+    color: #ecf0f1;
+    font-size: 17px;
+    background-color: #1d76b1;
+    border: 1px solid #0e2d57;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 0px 6px 0px #15021a;
+    transition: all 0.1s;
+    width: 10em;
+  }
+  
+  .buttonGen:active {
+    box-shadow: 0px 2px 0px #110803;
+    position: relative;
+    top: 2px;
+  }
