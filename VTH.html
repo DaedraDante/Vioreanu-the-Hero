@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class ="screen-main-menu" id ="screen-main-menu">
-        <h1>helo</h1>
+        <h1 class="game-title">Vioreanu the Hero RPG</h1>
     </div>
     <div class ="screen-fight" id="screen-fight">
         <div class="monster-container" id="monster-container">
@@ -25,38 +25,49 @@
         <div class="buy-weapons-div">
            <h2>Buy Weapons</h2> 
            <table>
-            <tr>
-                <td>Sharp stick</td>
-                <td><button>Buy Weapon</button></td>
-            </tr>
-            <tr>
-                <td>Wooden Club</td>
-                <td><button>Buy Weapon</button></td>
-            </tr>
-            <tr>
-                <td>Blunt Iron Sword</td>
-                <td><button>Buy Weapon</button></td>
-            </tr>
-            <tr>
-                <td>Gold Mace</td>
-                <td><button>Buy Weapon</button></td>
-            </tr>
-            <tr>
-                <td>Onyx double blade</td>
-                <td><button>Buy Weapon</button></td>
-            </tr>
+                <tr>
+                    <td>Sharp stick</td>
+                    <td><button id="buy-weapon1-btn">Buy Weapon</button></td>
+                </tr>
+                <tr>
+                    <td>Wooden Club</td>
+                    <td><button id="buy-weapon2-btn">Buy Weapon</button></td>
+                </tr>
+                <tr>
+                    <td>Blunt Iron Sword</td>
+                    <td><button id="buy-weapon3-btn">Buy Weapon</button></td>
+                </tr>
+                <tr>
+                    <td>Gold Mace</td>
+                    <td><button id="buy-weapon4-btn">Buy Weapon</button></td>
+                </tr>
+                <tr>
+                    <td>Onyx double blade</td>
+                    <td><button id="buy-weapon5-btn">Buy Weapon</button></td>
+                </tr>
            </table>
         </div>    
     </div>
     <div class="screen-final-boss" id="screen-final-boss">
     </div>
+    <div class="screen-player-stats" id="screen-player-stats">
+        <h1 style="text-align: center;">Stats</h1>
+        <h4 id="player-owned-weapon-text"></h4>
+        <h4 id="player-damage-text"></h4>
+        <h4>Slimes Killed:</h4>
+        <h4>Wolves Killed</h4>
+    </div>
     <div class ="button-container">
-        <button class ="buttonGen" id="go-fight-btn">Go Fight</button>
-        <button class ="buttonGen" id="go-shop-btn">Go Shop</button>
-        <button class ="buttonGen" id="go-final-boss-btn">Go Final Boss</button>
-        <div id="player-stats" class="player-stats">
-            <p id="player-health-text">Your health: </p>
-            <p id="player-gold-text">Your gold: </p>
+        <button class="buttonGen" id="go-main-menu-btn">Back to Menu</button>
+        <button class="buttonGen" id="go-fight-btn">Go Fight</button>
+        <button class="buttonGen" id="go-shop-btn">Go Shop</button>
+        <button class="buttonGen" id="go-final-boss-btn">Go Final Boss</button>
+        <button class="buttonGen" id="show-player-stats-btn">Show Player Stats</button>
+        <div id="player-stats" class="player-stats-mini-box">
+            <h2>HP:<p id="player-health-text"></p></h2>
+            <h2>Gold:<p id="player-gold-text"></p></h2>
+            
+             
         </div>
     </div>
     <script src="VTH.js"></script>
