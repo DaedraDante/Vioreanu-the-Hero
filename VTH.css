@@ -1,6 +1,13 @@
+:root {
+    --bgcolor: #d2d2ef;
+    --primarycolor: #4c50b8;
+    --secondarycolor: #898ce1;
+    --accentcolor: #585de9;
+}
+
 body {
     margin: 0;
-    background-color: rgb(123, 152, 179);
+    background-color: var(--bgcolor);
 }
 
 .section-title {
@@ -8,13 +15,60 @@ body {
     text-align: center;
     margin: 0;
 }
+
+.button-and-stats-container {
+    background-color: #8a8de2;
+    width: 60em;
+    height: 10em;
+    border: 3px solid black;
+    box-shadow: 5px 5px black;
+    position: fixed;
+    top: 50em;
+    left: 45em;
+    align-content: center;
+    text-align: center;
+}
 .player-stats-mini-box {
-    display: grid;
+    background-color: #8a8de2;
+    display: flex;
     grid-template-columns: 1fr 1fr;
     margin-left: 5em;
+    width: 11em;
+    position: fixed;
+    top: 33.340em;
+    left: 10em;
+    font-size: 1.5em;
+    border: 3px solid black;
+    box-shadow: 5px 5px black;
+    text-align: left;
 }
+.player-stats-mini-box table {
+    margin-left: 3.8em;
+}
+.button-container {
+    text-align: center;
+}
+.buttonGen {
+    color: #ecf0f1;
+    font-size: 17px;
+    background-color: #4b4eb8;
+    border: 1px solid #0e2d57;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 0px 6px 0px #15021a;
+    transition: all 0.1s;
+    width: 10em;
+  }
+  .buttonGen:active {
+    box-shadow: 0px 2px 0px #110803;
+    position: relative;
+    top: 2px;
+  }
+
+
 .screen-main-menu {
-    background-color: rgb(85, 143, 177);
+    background-color: var(--bgcolor);
     width: 95vw;
     height: 95vh;
     margin: 0 auto;
@@ -29,8 +83,9 @@ body {
         margin: 0;
         padding-top: 3.5em;
     }
+
 .screen-fight {
-    background-color: rgb(194, 126, 71);
+    background-color: var(--bgcolor);
     width: 95vw;
     height: 95vh;
     margin: 0 auto;
@@ -41,43 +96,62 @@ body {
     display: none;
 }
     .fight-text-box {
+        background-color: var(--primarycolor);
         width: 16em;
-        height: 36em;
-        border: 5px solid black;
+        height: 44em;
+        box-shadow: rgba(2, 2, 14, 0.2) 0px 7px 29px 0px;
         margin-top: 2em;
         overflow: auto;
+        color: var(--bgcolor);
+        font-size: 1em;
     }
     .monster-container {
-        width: 48em;
-        height: 36em;
-        border: 5px solid black;   
+        background-color: var(--secondarycolor);
+        width: 80em;
+        height: 44em;
+        box-shadow: rgba(2, 2, 14, 0.2) 0px 7px 29px 0px;
         position: relative;
         margin-top: 2em;
-
     }
     .current-monster-img {
         display: flex;
-        width: 24em;
-        height: 22em;
+        width: 30em;
+        height: 26em;
         margin: 0 auto;
         justify-content: center;
         margin-top: 3em;
     }
-    .current-monster-name-text {
-        display: flex;
-        justify-content: center;
-    }
-    .current-monster-health-text {
-        display: flex;
-        justify-content: center;
-    }
-    .attack-btn {
-        width: 12em;
+    .monster-container-text {
+        background-color: var(--primarycolor);
+        color: var(--bgcolor);
+        align-items: center;
         text-align: center;
-        margin-left: 22em;
+        margin-left: 28em;
+        width: 25em;
+        box-shadow: 5px 5px black;
     }
+        .current-monster-name-text {
+            font-size: 4em;
+            margin: 0;
+            margin-top: 0.2em;
+            display: flex;
+            justify-content: center;
+        }
+        .current-monster-health-text {
+            font-size: 1.5em;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .attack-btn {
+            width: 12em;
+            margin-top: 3.5em;
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
 .screen-shop {
-    background-color: rgb(177, 196, 73);
+    background-color: var(--bgcolor);
     width: 95vw;
     height: 95vh;
     margin: 0 auto;
@@ -85,9 +159,65 @@ body {
     box-shadow: rgba(2, 2, 14, 0.2) 0px 7px 29px 0px;
     border-radius: 15px 15px;
     display: none;
-}
+}   
+    .screen-shop h1 {
+        position: absolute;
+        margin-left: 14.5em;
+    }
+    .screen-shop h2 {
+        font-size: 3.8em;
+        text-align: center;
+    }
+    .shop-weapons-section {
+        border: 5px solid  black;
+        width: 40em;
+        height: 50em;
+        margin-left: 8em;
+        margin-top: 7.5em;
+        border-radius: 10px 10px;
+    }
+        .buy-weapons-div {
+            margin-left: 0.5em;
+            margin-top: 4em;
+            font-size: 2em;
+        }
+        .buy-weapon-btn {
+            margin-left: 1em;
+            font-size: 1em;
+        }
+        .buy-weapon-text {
+            font-size: 1.5em;
+        }
+    .shop-potions-section {
+        border: 5px solid  black;
+        width: 40em;
+        height: 50em;
+        margin-left: 28em;
+        margin-top: 7.5em;
+        border-radius: 10px 10px;
+    }
+        .buy-armor-div {
+            margin-left: 0.5em;
+            margin-top: 4em;
+            font-size: 2em;
+        }
+        .buy-armor-btn {
+            margin-left: 1em;
+            font-size: 1em;
+        }
+        .buy-potion-btn {
+            margin-left: 1em;
+            font-size: 1em;
+        }
+        .buy-armor-text {
+            font-size: 1.5em;
+        }
+        .buy-potion-text {
+            font-size: 1.5em;
+        }
+
 .screen-final-boss {
-    background-color: rgb(170, 58, 54);
+    background-color: var(--bgcolor);
     width: 95vw;
     height: 95vh;
     margin: 0 auto;
@@ -98,38 +228,26 @@ body {
 }
 .screen-player-stats {
     background-color: rgb(173, 185, 196);
-    width: 24em;
-    height: 32em;
+    width: 42em;
+    height: 56em;
     display: none;
     position: relative;
-    top: -48em;
+    left: -32em;
+    top: -58em;
     margin: 0 auto;
+    border: 5px solid black;
+    z-index: 1;
 }
-.button-container {
-    border: 3px solid black;
-    box-shadow: 5px 5px black;
-    width: 60em;
-    height: 10em;
-    position: fixed;
-    top: 50em;
-    left: 35em;
-    align-content: center;
+.screen-player-stats-avatar-container {
+    margin-top: 2em;
+    margin-left: 9.5em;
+    width: 22em;
+    height: 38em;
+    border: 5px solid black;
 }
-.buttonGen {
-    color: #ecf0f1;
-    font-size: 17px;
-    background-color: #1d76b1;
-    border: 1px solid #0e2d57;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 10px;
-    box-shadow: 0px 6px 0px #15021a;
-    transition: all 0.1s;
-    width: 10em;
-  }
-  
-  .buttonGen:active {
-    box-shadow: 0px 2px 0px #110803;
-    position: relative;
-    top: 2px;
-  }
+.screen-player-stats-avatar-container img {
+    width: 9em;
+    height: 25em;
+    margin-left: 6em;
+    margin-top: 1.5em;
+}

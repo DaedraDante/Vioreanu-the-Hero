@@ -6,6 +6,10 @@ const screenShop = document.getElementById("screen-shop");
 const screenFinalBoss = document.getElementById("screen-final-boss");
 const screenPlayerStats = document.getElementById("screen-player-stats");
 
+//attacks
+const attackSound = new Audio("77611__joelaudio__sfx_attack_sword_001.wav");
+const missSound = new Audio("405548__raclure__cancelmiss-chime.wav");
+const getAttackedSound = new Audio("386893__samueleunimancer__ouch-screem.wav")
 //buttons
 const goMainMenuBtn = document.getElementById("go-main-menu-btn");
 const goFightBtn = document.getElementById("go-fight-btn");
@@ -20,7 +24,7 @@ let playerDamage = 3;
 const playerDamageText = document.getElementById("player-damage-text");
 let playerHealth = 100;
 let playerHealthText = document.getElementById("player-health-text");
-let playerMissChance = 40;
+let playerMissChance = 35;
 playerHealthText.textContent = playerHealth;
 let playerGold = 0;
 let playerGoldText = document.getElementById("player-gold-text");
@@ -38,6 +42,9 @@ let currentMonsterMissChance;
 currentMonsterHealthText.textContent = `Health: ${currentMonsterHealth}`;
 let slayedSlimes = 0;
 let slayedWolves = 0;
+let slayedGoblins = 0;
+let slayedSkeletons = 0;
+let slayedLesserDemons = 0;
 let WeaponInventoryArray = [
   {
     weaponName:"Sharp Stick",
@@ -84,7 +91,7 @@ let monsterArray = [
     gold:150,
     img:"VTHslime.webp",
     damage:4,
-    missChance:70
+    missChance:75
   },
   {
     name:"Wolf",
@@ -103,12 +110,20 @@ let monsterArray = [
     missChance:60
   },
   {
-    name:"Orc",
+    name:"Skeleton",
     health:210,
-    gold:52,
-    img:"",
-    damage:16,
+    gold:40,
+    img:"scheletonul.png",
+    damage:15,
     missChance:50
+  },
+  {
+    name:"Lesser Demon",
+    health:420,
+    gold:68,
+    img:"lesserdemonul.png",
+    damage:20,
+    missChance:45
   }
 ];
 console.log(monsterArray[3].missChance);
@@ -152,11 +167,24 @@ const fightCurrentMonster = () => {
       slayedWolves++
        textParam =`You slayed ${slayedWolves} wolves`;
       addRowToFightTextBox(textParam);
-      console.log(`you slayed ${slayedWolves} wolves`);
       };
     if(slayedWolves >= 10) {
-      console.log("u slayed 10 wolves good job bro");
+      fightGoblin();
+      slayedGoblins++
+      textParam = `You slayed ${slayedGoblins} goblins`;
+      addRowToFightTextBox(textParam);
       };
+    if(slayedGoblins >= 10) {
+      fightSkeleton();
+      slayedSkeletons++
+      textParam = `You slayed ${slayedSkeletons} skeletons`
+      addRowToFightTextBox(textParam);
+    }
+    if(slayedSkeletons >= 10) {
+      fightLesserDemon();
+      textParam = `You slayed ${slayedLesserDemons} skeletons`
+      addRowToFightTextBox(textParam);
+    }
   };
 
 //function to set current monster as slime
@@ -184,35 +212,89 @@ const fightCurrentMonster = () => {
     currentMonsterDamage = monsterArray[1].damage;
     currentMonsterMissChance = monsterArray[1].missChance;
   };
+//function to set current monster as goblin
+  const fightGoblin = () => {
+    currentMonster = "goblin";
+    currentMonsterName = monsterArray[2].name;
+    currentMonsterNameText.textContent = currentMonsterName;
+    currentMonsterHealth = monsterArray[2].health;
+    currentMonsterHealthText.textContent = `Health: ${currentMonsterHealth}`;
+    currentMonsterGoldGiven = monsterArray[2].gold;
+    currentMonsterImg.src = monsterArray[2].img
+    currentMonsterDamage = monsterArray[2].damage;
+    currentMonsterMissChance = monsterArray[2].missChance;
+  };
+//function to set current monster as skeleton
+  const fightSkeleton = () => {
+    currentMonster = "skeleton";
+    currentMonsterName = monsterArray[3].name;
+    currentMonsterNameText.textContent = currentMonsterName;
+    currentMonsterHealth = monsterArray[3].health;
+    currentMonsterHealthText.textContent = `Health: ${currentMonsterHealth}`;
+    currentMonsterGoldGiven = monsterArray[3].gold;
+    currentMonsterImg.src = monsterArray[3].img
+    currentMonsterDamage = monsterArray[3].damage;
+    currentMonsterMissChance = monsterArray[3].missChance;
+  }
+//function to set current monster as lesser demon
+  const fightLesserDemon = () => {
+    currentMonster = "lesser demon";
+    currentMonsterName = monsterArray[4].name;
+    currentMonsterNameText.textContent = currentMonsterName;
+    currentMonsterHealth = monsterArray[4].health;
+    currentMonsterHealthText.textContent = `Health: ${currentMonsterHealth}`;
+    currentMonsterGoldGiven = monsterArray[4].gold;
+    currentMonsterImg.src = monsterArray[4].img
+    currentMonsterDamage = monsterArray[4].damage;
+    currentMonsterMissChance = monsterArray[4].missChance;
+  }
 
 // function for the attack action , included miss chance
 const attack = () => {
   if(Math.floor(Math.random() * 100 >= playerMissChance)) {
     console.log(`player miss chance is ${playerMissChance}`); 
     currentMonsterHealth = currentMonsterHealth - playerDamage;
-    textParam = `Successful hit`;
+    textParam = `Successful hit for ${playerDamage} damage`;
     addRowToFightTextBox(textParam);
+    attackSound.play();
   }else {
     textParam = "Miss!"
     addRowToFightTextBox(textParam);
+    missSound.play();
   }
+  
 };
 // function to get damaged by the monsters
 const getAttacked = () => {
   if(Math.floor(Math.random() * 100 >= currentMonsterMissChance)) {
     playerHealth = playerHealth - currentMonsterDamage;
     playerHealthText.textContent = playerHealth
-    textParam = `Monster successful  hit for ${currentMonsterDamage} damage`
+    textParam = `Monster hit you for ${currentMonsterDamage} damage`
     addRowToFightTextBox(textParam);
+    getAttackedSound.play()
   }else {
     textParam = "Monster missed"
     addRowToFightTextBox(textParam);
+    missSound.play();
   }
     
+  };
+// function to wait between attacks
+const intervalOfTime = () => {
+  attackBtn.disabled = true;
+  attackBtn.textContent = "."
+     setTimeout(function () {
+     attackBtn.textContent += ".";
+  }, 1000);
+    setTimeout(function () {
+      attackBtn.textContent = "Attack";
+      //turn the  button back on
+      attackBtn.disabled  = false;
+  }, 2000);
   }
 // function to attack current monster
 attackBtn.addEventListener("click",() => {
-  const damageCurrentMonster = () => {
+const damageCurrentMonster = () => {
     attack();
     currentMonsterHealthText.textContent = `Health: ${currentMonsterHealth}`;
   if(currentMonsterHealth <= 0) {
@@ -226,8 +308,10 @@ attackBtn.addEventListener("click",() => {
   return
   };
   applyDamageFromWeapon();
-  damageCurrentMonster();
-  getAttacked();
+  intervalOfTime();
+  setTimeout(damageCurrentMonster,2100);
+  setTimeout(intervalOfTime,2100)
+  setTimeout(getAttacked,4100)
 })
 
 //display the shop screen
@@ -235,7 +319,7 @@ goShopBtn.addEventListener("click",() => {
   screenMainMenu.style.display = "none";
   screenFight.style.display = "none"
   screenFinalBoss.style.display = "none";
-  screenShop.style.display = "block";
+  screenShop.style.display = "flex";
 });
 
 //function to apply the damage using includes to check for the ID of a weapon in the player's
@@ -341,11 +425,6 @@ const buyWeapons = () => {
 buyWeapons();
 
 
-
-
-
-
-
 // display the final boss screen
 goFinalBossBtn.addEventListener("click",() => {
  screenMainMenu.style.display = "none";
@@ -363,7 +442,8 @@ showPlayerStatsBtn.addEventListener("click",() => {
   }else if(statsBtnIsClicked === true) {
     screenPlayerStats.style.display = "none";
     statsBtnIsClicked = false;
-  }
+  };
+  applyDamageFromWeapon();
 });
   
 

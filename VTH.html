@@ -13,49 +13,101 @@
     <div class ="screen-fight" id="screen-fight">
         <div class="monster-container" id="monster-container">
             <img src="" alt="" id="current-monster-img" class="current-monster-img">
-            <p id="current-monster-name-text" class="current-monster-name-text"></p>
-            <p id="current-monster-health-text" class="current-monster-health-text">:</p>
-            <button id="attack-btn" class="attack-btn">attack</button>
+            <div class="monster-container-text">
+                <p id="current-monster-name-text" class="current-monster-name-text"></p>
+                <p id="current-monster-health-text" class="current-monster-health-text">:</p>
+                <button id="attack-btn" class="attack-btn">Attack</button>
+            </div>        
         </div>
         <div class="fight-text-box" id="fight-text-box">
         </div>
     </div>
     <div class ="screen-shop" id="screen-shop">
         <h1 class="section-title">Shop</h1>
-        <div class="buy-weapons-div">
-           <h2>Buy Weapons</h2> 
-           <table>
-                <tr>
-                    <td>Sharp stick</td>
-                    <td><button id="buy-weapon1-btn">Buy Weapon</button></td>
-                </tr>
-                <tr>
-                    <td>Wooden Club</td>
-                    <td><button id="buy-weapon2-btn">Buy Weapon</button></td>
-                </tr>
-                <tr>
-                    <td>Blunt Iron Sword</td>
-                    <td><button id="buy-weapon3-btn">Buy Weapon</button></td>
-                </tr>
-                <tr>
-                    <td>Gold Mace</td>
-                    <td><button id="buy-weapon4-btn">Buy Weapon</button></td>
-                </tr>
-                <tr>
-                    <td>Onyx double blade</td>
-                    <td><button id="buy-weapon5-btn">Buy Weapon</button></td>
-                </tr>
-           </table>
-        </div>    
+        <div class="shop-weapons-section">
+           <h2>Weapons</h2> 
+           <div class="buy-weapons-div">
+                <table>
+                    <tr>
+                        <td class="buy-weapon-text">Sharp stick</td>
+                        <td><button id="buy-weapon1-btn" class="buy-weapon-btn">Purchase</button></td>
+                    </tr>
+                    <tr>
+                        <td class="buy-weapon-text">Wooden Club</td>
+                        <td><button id="buy-weapon2-btn" class="buy-weapon-btn">Purchase</button></td>
+                    </tr>
+                    <tr>
+                        <td class="buy-weapon-text">Blunt Iron Sword</td>
+                        <td><button id="buy-weapon3-btn" class="buy-weapon-btn">Purchase</button></td>
+                    </tr>
+                    <tr>
+                        <td class="buy-weapon-text">Gold Mace</td>
+                        <td><button id="buy-weapon4-btn" class="buy-weapon-btn">Purchase</button></td>
+                    </tr>
+                    <tr>
+                        <td class="buy-weapon-text">Onyx double blade</td>
+                        <td><button id="buy-weapon5-btn" class="buy-weapon-btn">Purchase</button></td>
+                    </tr>
+                 </table>
+           </div>
+        </div>  
+        <div class="shop-potions-section">
+            <h2>Armor n Pots</h2>
+            <div class="buy-armor-div">
+                <table>
+                    <tr>
+                        <td class="buy-armor-text">Leather Armor</td>
+                        <td><button id="buy-armor1-btn" class="buy-armor-btn">Purchase</button></td>
+                    </tr>
+                    <tr>
+                        <td class="buy-armor-text">Iron Armor</td>
+                        <td><button id="buy-armor1-btn" class="buy-armor-btn">Purchase</button></td>
+                    </tr>
+                    <tr>
+                        <td class="buy-armor-text">Cobalt Armor</td>
+                        <td><button id="buy-armor1-btn" class="buy-armor-btn">Purchase</button></td>
+                    </tr>
+                    <tr>
+                        <td class="buy-armor-text">Palladium Armor</td>
+                        <td><button id="buy-armor1-btn" class="buy-armor-btn">Purchase</button></td>
+                    </tr>
+                    <tr>
+                        <td class="buy-armor-text">Adamantine Armor</td>
+                        <td><button id="buy-armor1-btn" class="buy-armor-btn">Purchase</button></td>
+                    </tr>
+                    <tr>
+                        <td class="buy-potion-text">Health Potion</td>
+                        <td><button id="buy-potion1-btn" class="buy-potion-btn">Purchase</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>  
     </div>
     <div class="screen-final-boss" id="screen-final-boss">
     </div>
     <div class="screen-player-stats" id="screen-player-stats">
+        <div class="screen-player-stats-avatar-container">
+            <img src="sticmen.png" alt="">
+        </div>
         <h1 style="text-align: center;">Stats</h1>
         <h4 id="player-owned-weapon-text"></h4>
         <h4 id="player-damage-text"></h4>
         <h4>Slimes Killed:</h4>
         <h4>Wolves Killed</h4>
+    </div>
+    <div class="button-and-stats-container">
+            <div id="player-stats" class="player-stats-mini-box">
+        <table>
+            <tr>
+                <td><p>HP:</p></td>
+                <td><p id="player-health-text"></p></td>
+            </tr>
+            <tr>
+                <td><p>Gold:</p></td>
+                <td><p id="player-gold-text"></p></td>
+            </tr>
+        </table>
+        
     </div>
     <div class ="button-container">
         <button class="buttonGen" id="go-main-menu-btn">Back to Menu</button>
@@ -63,13 +115,9 @@
         <button class="buttonGen" id="go-shop-btn">Go Shop</button>
         <button class="buttonGen" id="go-final-boss-btn">Go Final Boss</button>
         <button class="buttonGen" id="show-player-stats-btn">Show Player Stats</button>
-        <div id="player-stats" class="player-stats-mini-box">
-            <h2>HP:<p id="player-health-text"></p></h2>
-            <h2>Gold:<p id="player-gold-text"></p></h2>
-            
-             
-        </div>
     </div>
+    </div>
+
     <script src="VTH.js"></script>
 </body>
 </html>
