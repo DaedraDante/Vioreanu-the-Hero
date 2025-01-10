@@ -23,8 +23,8 @@ body {
     border: 3px solid black;
     box-shadow: 5px 5px black;
     position: fixed;
-    top: 50em;
-    left: 45em;
+    top: 50rem;
+    left: 48em;
     align-content: center;
     text-align: center;
 }
@@ -32,12 +32,12 @@ body {
     background-color: #8a8de2;
     display: flex;
     grid-template-columns: 1fr 1fr;
-    margin-left: 5em;
-    width: 11em;
+    margin-left: 5rem;
+    width: 18rem;
+    font-size: 1.5rem;
     position: fixed;
-    top: 33.340em;
-    left: 10em;
-    font-size: 1.5em;
+    top: 50rem;
+    left: 20rem;
     border: 3px solid black;
     box-shadow: 5px 5px black;
     text-align: left;
@@ -53,10 +53,10 @@ body {
     font-size: 17px;
     background-color: #4b4eb8;
     border: 1px solid #0e2d57;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     padding: 10px;
-    box-shadow: 0px 6px 0px #15021a;
+    box-shadow: 0px 6px 0px #15021a, rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     transition: all 0.1s;
     width: 10em;
   }
@@ -77,6 +77,7 @@ body {
     border-radius: 15px 15px;
 }
     .game-title {
+        color: var(--accentcolor);
         font-size: 5em;
         text-align: center;
         position: relative;
@@ -96,24 +97,31 @@ body {
     display: none;
 }
     .fight-text-box {
-        background-color: var(--primarycolor);
-        width: 16em;
-        height: 44em;
+        background: linear-gradient(var(--primarycolor),var(--secondarycolor));
+        width: 16rem;
+        height: 44rem;
         box-shadow: rgba(2, 2, 14, 0.2) 0px 7px 29px 0px;
-        margin-top: 2em;
+        margin-top: 2rem;
         overflow: auto;
         color: var(--bgcolor);
-        font-size: 1em;
+        font-size: 1.4rem;
+        border-radius: 15px 15px;
+        border-top-left-radius: 0px 0px;
+        border-bottom-left-radius: 0px;
     }
     .monster-container {
-        background-color: var(--secondarycolor);
+        background: linear-gradient(var(--primarycolor),var(--secondarycolor));
         width: 80em;
         height: 44em;
         box-shadow: rgba(2, 2, 14, 0.2) 0px 7px 29px 0px;
         position: relative;
         margin-top: 2em;
+        border-radius: 15px 15px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
     }
     .current-monster-img {
+        border: 5px solid black;
         display: flex;
         width: 30em;
         height: 26em;
@@ -122,13 +130,13 @@ body {
         margin-top: 3em;
     }
     .monster-container-text {
-        background-color: var(--primarycolor);
+        background:linear-gradient(var(--accentcolor),var(--primarycolor));
         color: var(--bgcolor);
         align-items: center;
         text-align: center;
         margin-left: 28em;
         width: 25em;
-        box-shadow: 5px 5px black;
+        box-shadow: 5px 5px var(--accentcolor);
     }
         .current-monster-name-text {
             font-size: 4em;
@@ -144,10 +152,19 @@ body {
             justify-content: center;
         }
         .attack-btn {
-            width: 12em;
-            margin-top: 3.5em;
+            margin-top: 3.5rem;
             text-align: center;
-            margin-bottom: 1.5em;
+            margin-bottom: 1.5rem;
+            background-color: var(--accentcolor);
+            color: var(--bgcolor);
+            font-size: 1.8rem;
+            width: 16rem;
+            height: 2.4rem;
+            max-width: 16rem;
+            max-height: 2.4rem;
+            margin-left: 2rem;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            border-radius: 10px;
         }
 
 .screen-shop {
@@ -159,7 +176,7 @@ body {
     box-shadow: rgba(2, 2, 14, 0.2) 0px 7px 29px 0px;
     border-radius: 15px 15px;
     display: none;
-}   
+}                      
     .screen-shop h1 {
         position: absolute;
         margin-left: 14.5em;
@@ -168,7 +185,19 @@ body {
         font-size: 3.8em;
         text-align: center;
     }
+    .buy-btn {
+        background-color: var(--accentcolor);
+        color: var(--bgcolor);
+        width: 6em;
+        height: 1.5em;
+        margin-left: 1em;
+        font-size: 1em;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        border-radius: 10px;
+    }
     .shop-weapons-section {
+        background: linear-gradient(var(--primarycolor),var(--secondarycolor));
+        color: var(--bgcolor);
         border: 5px solid  black;
         width: 40em;
         height: 50em;
@@ -181,14 +210,42 @@ body {
             margin-top: 4em;
             font-size: 2em;
         }
-        .buy-weapon-btn {
-            margin-left: 1em;
-            font-size: 1em;
-        }
         .buy-weapon-text {
             font-size: 1.5em;
         }
+        .buy-weapon-tooltip {
+            position: absolute;
+            display: none;
+            width: 6em;
+            height: 5em;
+            text-align: center;
+            align-items: center;
+            background: var(--primarycolor);
+            color: var(--bgcolor);
+            padding: 5px;
+            border-radius: 5px;
+            border: 3px solid black;
+            white-space: nowrap;
+            z-index: 1;
+        }
+        #buy-weapon1-btn:hover ~ .buy-weapon1-tooltip {
+            display: block;    
+        }
+        #buy-weapon2-btn:hover ~ .buy-weapon2-tooltip {
+            display: block;    
+        }
+        #buy-weapon3-btn:hover ~ .buy-weapon3-tooltip {
+            display: block;    
+        }
+        #buy-weapon4-btn:hover ~ .buy-weapon4-tooltip {
+            display: block;    
+        }
+        #buy-weapon5-btn:hover ~ .buy-weapon5-tooltip {
+            display: block;    
+        }
     .shop-potions-section {
+        background: linear-gradient(var(--primarycolor),var(--secondarycolor));
+        color: var(--bgcolor);
         border: 5px solid  black;
         width: 40em;
         height: 50em;
@@ -200,14 +257,6 @@ body {
             margin-left: 0.5em;
             margin-top: 4em;
             font-size: 2em;
-        }
-        .buy-armor-btn {
-            margin-left: 1em;
-            font-size: 1em;
-        }
-        .buy-potion-btn {
-            margin-left: 1em;
-            font-size: 1em;
         }
         .buy-armor-text {
             font-size: 1.5em;
@@ -226,8 +275,9 @@ body {
     border-radius: 15px 15px;
     display: none;
 }
+
 .screen-player-stats {
-    background-color: rgb(173, 185, 196);
+    background:linear-gradient(var(--primarycolor),var(--secondarycolor));
     width: 42em;
     height: 56em;
     display: none;
@@ -238,16 +288,16 @@ body {
     border: 5px solid black;
     z-index: 1;
 }
-.screen-player-stats-avatar-container {
-    margin-top: 2em;
-    margin-left: 9.5em;
-    width: 22em;
-    height: 38em;
-    border: 5px solid black;
-}
-.screen-player-stats-avatar-container img {
-    width: 9em;
-    height: 25em;
-    margin-left: 6em;
-    margin-top: 1.5em;
-}
+    .screen-player-stats-avatar-container {
+        margin-top: 2em;
+        margin-left: 9.5em;
+        width: 22em;
+        height: 38em;
+        border: 5px solid black;
+    }
+    .screen-player-stats-avatar-container img {
+        width: 9em;
+        height: 25em;
+        margin-left: 6em;
+        margin-top: 1.5em;
+    }

@@ -9,7 +9,7 @@ const screenPlayerStats = document.getElementById("screen-player-stats");
 //attacks
 const attackSound = new Audio("77611__joelaudio__sfx_attack_sword_001.wav");
 const missSound = new Audio("405548__raclure__cancelmiss-chime.wav");
-const getAttackedSound = new Audio("386893__samueleunimancer__ouch-screem.wav")
+const getAttackedSound = new Audio("404747__owlstorm__retro-video-game-sfx-ouch.wav")
 //buttons
 const goMainMenuBtn = document.getElementById("go-main-menu-btn");
 const goFightBtn = document.getElementById("go-fight-btn");
