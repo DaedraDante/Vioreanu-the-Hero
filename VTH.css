@@ -3,6 +3,7 @@
     --primarycolor: #4c50b8;
     --secondarycolor: #898ce1;
     --accentcolor: #585de9;
+    
 }
 
 body {
@@ -17,7 +18,8 @@ body {
 }
 
 .button-and-stats-container {
-    background-color: #8a8de2;
+    display: none;
+    background-color: var(--secondarycolor);
     width: 60em;
     height: 10em;
     border: 3px solid black;
@@ -29,7 +31,8 @@ body {
     text-align: center;
 }
 .player-stats-mini-box {
-    background-color: #8a8de2;
+    background-color: var(--secondarycolor);
+    color: var(--bgcolor);
     display: flex;
     grid-template-columns: 1fr 1fr;
     margin-left: 5rem;
@@ -49,10 +52,9 @@ body {
     text-align: center;
 }
 .buttonGen {
-    color: #ecf0f1;
+    color: var(--bgcolor);
     font-size: 17px;
-    background-color: #4b4eb8;
-    border: 1px solid #0e2d57;
+    background-color: var(--primarycolor);
     border-radius: 8px;
     cursor: pointer;
     padding: 10px;
@@ -63,7 +65,12 @@ body {
   .buttonGen:active {
     box-shadow: 0px 2px 0px #110803;
     position: relative;
-    top: 2px;
+    top: 3px;
+  }
+  .buttonGen:hover {
+    color:var(--secondarycolor);
+    position: relative;
+    top:2px;
   }
 
 
@@ -82,7 +89,51 @@ body {
         text-align: center;
         position: relative;
         margin: 0;
-        padding-top: 3.5em;
+        padding-top: 1.5em;
+    }
+    .menu-btn-div {
+        display: flex;
+        position: relative;
+        margin-left: 50rem;
+        margin-top: 12rem;
+        flex-direction: column;
+        text-align: center;
+        width: 14rem;
+        height: 5rem;
+    }
+    .menu-btn-div button {
+        width: 25rem;
+        height: 4rem;
+        margin:1rem;
+        font-size: 3rem;
+    }
+    .menu-settings-div {
+        display: none;
+        position: relative;
+        margin: 0 auto;
+        top: 8rem;
+        background: linear-gradient(var(--secondarycolor),var(--primarycolor));
+        width: 30rem;
+        height: 45rem;
+        border:10px solid var(--accentcolor);
+        border-radius:10px ;
+    }
+    .menu-settings-div h2 {
+        font-size: 3.5rem;
+        text-align: center;
+        color: var(--bgcolor);
+    }
+    .menu-settings-div-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5rem;
+    }
+    .menu-settings-div-buttons button {
+        margin: 1rem;
+        width: 16rem;
+        height: 3rem;
     }
 
 .screen-fight {
@@ -121,7 +172,6 @@ body {
         border-bottom-right-radius: 0px;
     }
     .current-monster-img {
-        border: 5px solid black;
         display: flex;
         width: 30em;
         height: 26em;
@@ -152,6 +202,7 @@ body {
             justify-content: center;
         }
         .attack-btn {
+            cursor: pointer;
             margin-top: 3.5rem;
             text-align: center;
             margin-bottom: 1.5rem;
@@ -165,6 +216,14 @@ body {
             margin-left: 2rem;
             box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
             border-radius: 10px;
+            transform: all 0.1s;
+        }
+        .attack-btn:active {
+            position: relative;
+            top: 2px;
+        }
+        .attack-btn:hover {
+            color:var(--secondarycolor);
         }
 
 .screen-shop {
@@ -186,17 +245,44 @@ body {
         text-align: center;
     }
     .buy-btn {
+        cursor: pointer;
         background-color: var(--accentcolor);
         color: var(--bgcolor);
         width: 6em;
         height: 1.5em;
         margin-left: 1em;
         font-size: 1em;
-        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        box-shadow:0px 6px 0px #15021a, rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
         border-radius: 10px;
+        transition: all 0.1s;
+    }
+    .buy-btn:active {
+        box-shadow: 0px 2px 0px #110803;
+        position: relative;
+        top: 2px;
+    }
+    .buy-btn:hover {
+        color:var(--secondarycolor);
+        position: relative;
+        top: 2px;
+    }
+    .buy-tooltip{
+        position: absolute;
+        display: none;
+        width: 6em;
+        height: 5em;
+        text-align: center;
+        align-items: center;
+        background: radial-gradient(var(--accentcolor),var(--primarycolor));
+        color: var(--bgcolor);
+        padding: 5px;
+        border-radius: 5px;
+        border: 3px solid black;
+        white-space: nowrap;
+        z-index: 1;
     }
     .shop-weapons-section {
-        background: linear-gradient(var(--primarycolor),var(--secondarycolor));
+        background: radial-gradient(var(--secondarycolor),var(--accentcolor));
         color: var(--bgcolor);
         border: 5px solid  black;
         width: 40em;
@@ -212,21 +298,6 @@ body {
         }
         .buy-weapon-text {
             font-size: 1.5em;
-        }
-        .buy-weapon-tooltip {
-            position: absolute;
-            display: none;
-            width: 6em;
-            height: 5em;
-            text-align: center;
-            align-items: center;
-            background: var(--primarycolor);
-            color: var(--bgcolor);
-            padding: 5px;
-            border-radius: 5px;
-            border: 3px solid black;
-            white-space: nowrap;
-            z-index: 1;
         }
         #buy-weapon1-btn:hover ~ .buy-weapon1-tooltip {
             display: block;    
@@ -244,7 +315,7 @@ body {
             display: block;    
         }
     .shop-potions-section {
-        background: linear-gradient(var(--primarycolor),var(--secondarycolor));
+        background: radial-gradient(var(--secondarycolor),var(--accentcolor));
         color: var(--bgcolor);
         border: 5px solid  black;
         width: 40em;
@@ -264,6 +335,24 @@ body {
         .buy-potion-text {
             font-size: 1.5em;
         }
+        #buy-armor1-btn:hover ~ .buy-armor1-tooltip {
+            display: block;
+        }
+        #buy-armor2-btn:hover ~ .buy-armor2-tooltip {
+            display: block;
+        }
+        #buy-armor3-btn:hover ~ .buy-armor3-tooltip {
+            display: block;
+        }
+        #buy-armor4-btn:hover ~ .buy-armor4-tooltip {
+            display: block;
+        }
+        #buy-armor5-btn:hover ~ .buy-armor5-tooltip {
+            display: block;
+        }
+        #buy-potion1-btn:hover ~ .buy-potion1-tooltip {
+            display: block;
+        }
 
 .screen-final-boss {
     background-color: var(--bgcolor);
@@ -278,6 +367,7 @@ body {
 
 .screen-player-stats {
     background:linear-gradient(var(--primarycolor),var(--secondarycolor));
+    color: var(--bgcolor);
     width: 42em;
     height: 56em;
     display: none;
@@ -289,15 +379,28 @@ body {
     z-index: 1;
 }
     .screen-player-stats-avatar-container {
+        display: flex;
+        justify-content: center;
         margin-top: 2em;
         margin-left: 9.5em;
         width: 22em;
-        height: 38em;
-        border: 5px solid black;
+        height: 30em;
+        border: 5px solid var(--secondarycolor);
     }
     .screen-player-stats-avatar-container img {
-        width: 9em;
-        height: 25em;
-        margin-left: 6em;
-        margin-top: 1.5em;
+        width:15em;
+        height: 28rem;
+        padding: 1em;
+    }
+    .screen-player-stats-text-container {
+        justify-content: center;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        width: 100%;
+    }
+    .screen-player-stats table {
+        width: 40%;
+        margin: 0;
+        padding: 0;
     }

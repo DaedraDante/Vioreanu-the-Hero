@@ -8,7 +8,21 @@
 </head>
 <body>
     <div class ="screen-main-menu" id ="screen-main-menu">
-        <h1 class="game-title">Vioreanu the Hero RPG</h1>
+        <h1 class="game-title" id="game-title">Vioreanu the Hero RPG</h1>
+        <div class="menu-btn-div" id="menu-btn-div">
+            <button id="menu-play-btn" class="buttonGen">Play</button>
+            <button id="menu-settings-btn" class="buttonGen">Settings</button>
+        </div>
+        <div class="menu-settings-div" id="menu-settings-div">
+            <h2>Settings</h2>
+            <div class="menu-settings-div-buttons">
+                <button id="settings-back-btn" class="buttonGen">Back to main menu</button>
+                <button id="settings-turn-off-music-btn" class="buttonGen">Turn off music</button>
+                <button id="settings-music-volume-btn" class="buttonGen">Change music volume <p id="music-volume-text"></p></button>
+                <button id="settings-change-music-btn" class="buttonGen">Change music</button>
+                <button id="settings-change-color-theme-btn" class="buttonGen">Change color theme</button>
+            </div>
+        </div>
     </div>
     <div class ="screen-fight" id="screen-fight">
         <div class="monster-container" id="monster-container">
@@ -31,31 +45,31 @@
                     <tr>
                         <td class="buy-weapon-text">Sharp stick</td>
                         <td><button id="buy-weapon1-btn" class="buy-btn">Purchase</button>
-                        <div class="buy-weapon-tooltip buy-weapon1-tooltip"><p>25 Gold</p><p>5 Damage</p></div>
+                        <div class="buy-tooltip buy-weapon1-tooltip"><p>25 Gold</p><p>5 Damage</p></div>
                         </td>
                     </tr>
                     <tr>
                         <td class="buy-weapon-text">Wooden Club</td>
                         <td><button id="buy-weapon2-btn" class="buy-btn">Purchase</button>
-                            <div class="buy-weapon-tooltip buy-weapon2-tooltip"><p>70 Gold</p><p>11 Damage</p></div>
+                            <div class="buy-tooltip buy-weapon2-tooltip"><p>70 Gold</p><p>11 Damage</p></div>
                         </td>
                     </tr>
                     <tr>
                         <td class="buy-weapon-text">Blunt Iron Sword</td>
                         <td><button id="buy-weapon3-btn" class="buy-btn">Purchase</button>
-                            <div class="buy-weapon-tooltip buy-weapon3-tooltip"><p>170 Gold</p><p>17 Damage</p></div>
+                            <div class="buy-tooltip buy-weapon3-tooltip"><p>170 Gold</p><p>17 Damage</p></div>
                         </td>
                     </tr>
                     <tr>
                         <td class="buy-weapon-text">Gold Mace</td>
                         <td><button id="buy-weapon4-btn" class="buy-btn">Purchase</button>
-                        <div class="buy-weapon-tooltip buy-weapon4-tooltip"><p>300 Gold</p><p>24 Damage</p></div>
+                        <div class="buy-tooltip buy-weapon4-tooltip"><p>300 Gold</p><p>24 Damage</p></div>
                         </td>
                     </tr>
                     <tr>
                         <td class="buy-weapon-text">Onyx double blade</td>
                         <td><button id="buy-weapon5-btn" class="buy-btn">Purchase</button>
-                        <div class="buy-weapon-tooltip buy-weapon5-tooltip"><p>700 Gold</p><p>38 Damage</p></div>
+                        <div class="buy-tooltip buy-weapon5-tooltip"><p>700 Gold</p><p>38 Damage</p></div>
                         </td>
                     </tr>
                  </table>
@@ -69,27 +83,39 @@
                 <table>
                     <tr>
                         <td class="buy-armor-text">Leather Armor</td>
-                        <td><button id="buy-armor1-btn" class="buy-btn">Purchase</button></td>
+                        <td><button id="buy-armor1-btn" class="buy-btn">Purchase</button>
+                        <div class="buy-tooltip buy-armor1-tooltip"><p>40 Gold</p><p>+10 maxHP</p></div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="buy-armor-text">Iron Armor</td>
-                        <td><button id="buy-armor1-btn" class="buy-btn">Purchase</button></td>
+                        <td><button id="buy-armor2-btn" class="buy-btn">Purchase</button>
+                        <div class="buy-tooltip buy-armor2-tooltip"><p>100 Gold</p><p>+20 maxHP</p></div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="buy-armor-text">Cobalt Armor</td>
-                        <td><button id="buy-armor1-btn" class="buy-btn">Purchase</button></td>
+                        <td><button id="buy-armor3-btn" class="buy-btn">Purchase</button>
+                        <div class="buy-tooltip buy-armor3-tooltip"><p>210 Gold</p><p>+35 maxHP</p></div>
+                    </td>
                     </tr>
                     <tr>
                         <td class="buy-armor-text">Palladium Armor</td>
-                        <td><button id="buy-armor1-btn" class="buy-btn">Purchase</button></td>
+                        <td><button id="buy-armor4-btn" class="buy-btn">Purchase</button>
+                        <div class="buy-tooltip buy-armor4-tooltip"><p>340 Gold</p><p>+55 maxHP</p></div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="buy-armor-text">Adamantine Armor</td>
-                        <td><button id="buy-armor1-btn" class="buy-btn">Purchase</button></td>
+                        <td><button id="buy-armor5-btn" class="buy-btn">Purchase</button>
+                        <div class="buy-tooltip buy-armor5-tooltip"><p>700 Gold</p><p>+80 maxHP</p></div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="buy-potion-text">Health Potion</td>
-                        <td><button id="buy-potion1-btn" class="buy-btn">Purchase</button></td>
+                        <td><button id="buy-potion1-btn" class="buy-btn">Purchase</button>
+                        <div class="buy-tooltip buy-potion1-tooltip"><p>15 Gold</p><p>+20 HP</p></div>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -102,21 +128,57 @@
             <img src="sticmen.png" alt="">
         </div>
         <h1 style="text-align: center;">Stats</h1>
-        <h4 id="player-owned-weapon-text"></h4>
-        <h4 id="player-damage-text"></h4>
-        <h4>Slimes Killed:</h4>
-        <h4>Wolves Killed</h4>
+        <div class="screen-player-stats-text-container">
+            <table class="player-stats-table">
+                <tr>
+                    <td style="text-align: center;"><p>Damage: </p></td>
+                    <td><h4 id="player-damage-text">3</h4></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><p>Max HP:</p></td>
+                    <td><h4 id="player-stats-maxHP-text">100</h4></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><p>Current weapon:</p></td>
+                    <td><h4 id="player-owned-weapon-text"></h4></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><p>Current armor:</p></td>
+                    <td><h4 id="player-owned-armor-text"></h4></td>
+                </tr>
+            </table>
+            <table class="kill-stats-table">
+                <tr>
+                    <td><p>Slimes Killed:</p></td>
+                    <td><h4 id="slayed-slimes-text"></h4></td>
+                </tr>
+                <tr>
+                    <td><p>Wolves Killed</p></td>
+                    <td><h4 id="slayed-wolves-text"></h4></td>
+                </tr>
+                <tr>
+                    <td><p>Goblins Killed</p></td>
+                    <td><h4 id="slayed-goblins-text"></h4></td>
+                </tr>
+                <tr>
+                    <td><p>Skeletons Killed</p></td>
+                    <td><h4 id="slayed-skeletons-text"></h4></td>
+                </tr>
+            </table> 
+        </div>
     </div>
-    <div class="button-and-stats-container">
+    <div class="button-and-stats-container"  id="button-and-stats-container">
             <div id="player-stats" class="player-stats-mini-box">
         <table>
             <tr>
                 <td><p>HP:</p></td>
-                <td><p id="player-health-text"></p></td>
+                <td><h3 id="player-health-text"></h3></td>
+                <td><p>/</p></td>
+                <td><h3 id="player-max-health-text"></h3></td>
             </tr>
             <tr>
-                <td><p>Gold:</p></td>
-                <td><p id="player-gold-text"></p></td>
+                <td><p>Glod:</p></td>
+                <td><h3 id="player-gold-text"></h3></td>
             </tr>
         </table>
         
